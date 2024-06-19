@@ -2,8 +2,10 @@ import { Button, Card, CardBody, SimpleGrid, Text } from "@chakra-ui/react";
 import "./App.css";
 import ExpenseList from "./components/ExpenseList";
 import { useState } from "react";
+import ExpenseFilter from "./components/ExpenseFilter";
 
 function App() {
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [expenses, setExpenses] = useState([
     { id: 1, description: "Electricity", amount: 80, category: "Utilities" },
     { id: 2, description: "Milk", amount: 10, category: "Groceries" },
@@ -17,6 +19,9 @@ function App() {
     >
       <Card>
         <CardBody>
+          <ExpenseFilter
+            onSelectedCategory={(category) => setSelectedCategory(category)}
+          ></ExpenseFilter>
           <ExpenseList
             expenses={expenses}
             onDelete={(id) =>
