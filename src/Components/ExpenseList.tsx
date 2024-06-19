@@ -10,6 +10,7 @@ import {
   Button,
   Tfoot,
 } from "@chakra-ui/react";
+import "./ExpenseList.css";
 
 interface Expense {
   id: number;
@@ -24,15 +25,18 @@ interface ExpensesListProps {
 }
 
 const ExpenseList = ({ expenses, onDelete }: ExpensesListProps) => {
+  if (expenses.length === 0)
+    return <div className="no-items">There are no items in this category</div>;
+
   return (
     <TableContainer>
       <Table size="sm" variant="simple">
         <TableCaption></TableCaption>
         <Thead>
           <Tr>
-            <Th>Description</Th>
-            <Th>Amount</Th>
-            <Th>Category</Th>
+            <Th color="header.dark">Description</Th>
+            <Th color="header.dark">Amount</Th>
+            <Th color="header.dark">Category</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -44,11 +48,11 @@ const ExpenseList = ({ expenses, onDelete }: ExpensesListProps) => {
               <Td>
                 <Button
                   onClick={() => onDelete(item.id)}
-                  as="button"
-                  height="30px"
+                  height="25px"
+                  width="60px"
                   border="1px"
                   borderRadius="5px"
-                  fontSize="14px"
+                  fontSize="12px"
                   bg="#ffffff"
                   borderColor="#cc0000"
                   color="#cc0000"
@@ -62,10 +66,10 @@ const ExpenseList = ({ expenses, onDelete }: ExpensesListProps) => {
         </Tbody>
         <Tfoot>
           <Tr>
-            <Td color="#003366" fontWeight="semibold">
+            <Td color="header.dark" fontWeight="semibold">
               Total:
             </Td>
-            <Td color="#003366" fontWeight="semibold">
+            <Td color="header.dark" fontWeight="semibold">
               ${" "}
               {expenses
                 .reduce((acc, expense) => expense.amount + acc, 0)

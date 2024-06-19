@@ -1,4 +1,11 @@
-import { Select, Stack } from "@chakra-ui/react";
+import {
+  Card,
+  CardBody,
+  FormControl,
+  FormLabel,
+  Select,
+  Stack,
+} from "@chakra-ui/react";
 import expenseCategories from "../expense-categories";
 
 interface ExpenseFilterProps {
@@ -7,15 +14,19 @@ interface ExpenseFilterProps {
 
 const ExpenseFilter = ({ onSelectedCategory }: ExpenseFilterProps) => {
   return (
-    <Stack spacing={3} marginBottom="20px">
-      <Select placeholder="Select category" variant="filled" color="#6b6b6b">
-        {expenseCategories.map((category) => (
-          <option key={category} value={category}>
-            {category}
-          </option>
-        ))}
-      </Select>
-    </Stack>
+    <Select
+      onChange={(event) => onSelectedCategory(event.target.value)}
+      placeholder="Select category"
+      variant="filled"
+      color="body.light"
+      marginBottom="25px"
+    >
+      {expenseCategories.map((category) => (
+        <option key={category} value={category}>
+          {category}
+        </option>
+      ))}
+    </Select>
   );
 };
 

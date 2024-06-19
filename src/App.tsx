@@ -3,6 +3,7 @@ import "./App.css";
 import ExpenseList from "./components/ExpenseList";
 import { useState } from "react";
 import ExpenseFilter from "./components/ExpenseFilter";
+import ExpenseForm from "./components/ExpenseForm";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -12,18 +13,20 @@ function App() {
     { id: 3, description: "Mathematics", amount: 10, category: "Education" },
   ]);
 
+  const visibleExpenses = selectedCategory
+    ? expenses.filter((exp) => exp.category === selectedCategory)
+    : expenses;
+
   return (
-    <SimpleGrid
-      spacing={4}
-      templateColumns="repeat(auto-fill, minmax(350px, 1fr))"
-    >
-      <Card>
+    <SimpleGrid spacing={4}>
+      <ExpenseForm></ExpenseForm>
+      <Card maxW="md">
         <CardBody>
           <ExpenseFilter
             onSelectedCategory={(category) => setSelectedCategory(category)}
           ></ExpenseFilter>
           <ExpenseList
-            expenses={expenses}
+            expenses={visibleExpenses}
             onDelete={(id) =>
               setExpenses(expenses.filter((ex) => ex.id !== id))
             }
