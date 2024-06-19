@@ -1,34 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Button, Card, CardBody, SimpleGrid, Text } from "@chakra-ui/react";
+import "./App.css";
+import ExpenseList from "./components/ExpenseList";
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [expenses, setExpenses] = useState([
+    { id: 1, description: "Electricity", amount: 80, category: "Utilities" },
+    { id: 2, description: "Milk", amount: 10, category: "Groceries" },
+    { id: 3, description: "Mathematics", amount: 10, category: "Education" },
+  ]);
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <SimpleGrid
+      spacing={4}
+      templateColumns="repeat(auto-fill, minmax(350px, 1fr))"
+    >
+      <Card>
+        <CardBody>
+          <ExpenseList
+            expenses={expenses}
+            onDelete={(id) =>
+              setExpenses(expenses.filter((ex) => ex.id !== id))
+            }
+          ></ExpenseList>
+        </CardBody>
+      </Card>
+    </SimpleGrid>
+  );
 }
 
-export default App
+export default App;
