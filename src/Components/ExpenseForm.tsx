@@ -35,7 +35,7 @@ const ExpenseForm = ({ onSubmit }: ExpenseFormProps) => {
   } = useForm<ExpenseFormData>({ resolver: zodResolver(schema) });
   return (
     <>
-      <h5 className="mb-3 text-secondary">Expense Tracker</h5>
+      <h5 className="mb-4 mt-4 text-secondary">Expense Tracker</h5>
       <Form
         className=" border-bottom"
         onSubmit={handleSubmit((data) => {
