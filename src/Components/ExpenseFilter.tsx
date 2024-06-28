@@ -25,7 +25,6 @@ const ExpenseFilter = ({ onSelectedCategory }: ExpenseFilterProps) => {
         <Form.Select
           aria-label="Expense filter"
           id="expense-filter"
-          size="sm"
           onChange={(event) => onSelectedCategory(event.target.value)}
         >
           {expenseCategories.map((category) => (

@@ -1,8 +1,3 @@
-#descriptionInput,#amountInput,#categoriesInput, 
-#expense-filter,.expense-filter-text,#expense-filter-text{
-    font-size: .8rem;
-}
-
 #amountInput::placeholder,
 #descriptionInput::placeholder,
 #categoriesInput,#expense-filter,#expense-filter,

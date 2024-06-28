@@ -41,13 +41,12 @@ const ExpenseForm = ({ onSubmit }: ExpenseFormProps) => {
         reset();
       })}
     >
-      <Row className="mb-3 mt-4 g-1" size="sm">
+      <Row className="mb-3 mt-4 g-1">
         <Form.Group as={Col} controlId="descriptionInput">
           <Form.Control
             {...register("description")}
             type="text"
             placeholder="Description"
-            size="sm"
             aria-label="Description"
           />
           {errors.description && (
@@ -60,7 +59,6 @@ const ExpenseForm = ({ onSubmit }: ExpenseFormProps) => {
             {...register("amount", { valueAsNumber: true })}
             type="number"
             placeholder="Amount"
-            size="sm"
             aria-label="Amount"
           />
           {errors.amount && (
@@ -73,7 +71,6 @@ const ExpenseForm = ({ onSubmit }: ExpenseFormProps) => {
             {...register("category")}
             defaultValue="Category"
             aria-label="Categories"
-            size="sm"
           >
             <option>select category</option>
             {expenseCategories.map((category) => (
@@ -89,9 +86,7 @@ const ExpenseForm = ({ onSubmit }: ExpenseFormProps) => {
       </Row>
       <Row className="mb-4">
         <Form.Group as={Col}>
-          <Button className="btn-sm" type="submit">
-            Add Expense
-          </Button>
+          <Button type="submit">Add Expense</Button>
         </Form.Group>
       </Row>
     </Form>
