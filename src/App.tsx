@@ -1,9 +1,9 @@
 import { Button, Card, CardBody, SimpleGrid, Text } from "@chakra-ui/react";
-import "./App.css";
 import ExpenseList from "./components/ExpenseList";
 import { useState } from "react";
 import ExpenseFilter from "./components/ExpenseFilter";
 import ExpenseForm from "./components/ExpenseForm";
+import "./App.css";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -18,10 +18,10 @@ function App() {
     : expenses;
 
   return (
-    <SimpleGrid spacing={4}>
-      <ExpenseForm></ExpenseForm>
-      <Card maxW="md">
-        <CardBody>
+    <>
+      <div className="card mb-3 justify-content-start">
+        <div className="card-body">
+          <ExpenseForm></ExpenseForm>
           <ExpenseFilter
             onSelectedCategory={(category) => setSelectedCategory(category)}
           ></ExpenseFilter>
@@ -31,9 +31,23 @@ function App() {
               setExpenses(expenses.filter((ex) => ex.id !== id))
             }
           ></ExpenseList>
-        </CardBody>
-      </Card>
-    </SimpleGrid>
+        </div>
+      </div>
+
+      {/* <div className="card">
+        <div className="card-body">
+          <ExpenseFilter
+            onSelectedCategory={(category) => setSelectedCategory(category)}
+          ></ExpenseFilter>
+          <ExpenseList
+            expenses={visibleExpenses}
+            onDelete={(id) =>
+              setExpenses(expenses.filter((ex) => ex.id !== id))
+            }
+          ></ExpenseList>
+        </div>
+      </div> */}
+    </>
   );
 }
 

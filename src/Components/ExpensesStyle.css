@@ -1,0 +1,10 @@
+#amountInput, #descriptionInput,#categoriesInput{
+    font-size: .6rem;
+}
+
+#amountInput::placeholder,
+#descriptionInput::placeholder,
+#categoriesInput{
+    color: #9a9a9a;
+}
+
