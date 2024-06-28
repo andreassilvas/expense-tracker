@@ -11,7 +11,12 @@ function App() {
   const [expenses, setExpenses] = useState([
     { id: 1, description: "Electricity", amount: 80, category: "Utilities" },
     { id: 2, description: "Milk", amount: 10, category: "Groceries" },
-    { id: 3, description: "Mathematics", amount: 10, category: "Education" },
+    {
+      id: 3,
+      description: "Computer Science",
+      amount: 10,
+      category: "Education",
+    },
   ]);
 
   const visibleExpenses = selectedCategory

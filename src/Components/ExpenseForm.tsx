@@ -41,7 +41,7 @@ const ExpenseForm = ({ onSubmit }: ExpenseFormProps) => {
         reset();
       })}
     >
-      <Row className="mb-3 mt-4 g-1">
+      <Row className="mb-3 mt-4 g-2">
         <Form.Group as={Col} controlId="descriptionInput">
           <Form.Control
             {...register("description")}
@@ -72,7 +72,7 @@ const ExpenseForm = ({ onSubmit }: ExpenseFormProps) => {
             defaultValue="Category"
             aria-label="Categories"
           >
-            <option>select category</option>
+            <option>Select Category</option>
             {expenseCategories.map((category) => (
               <option key={category} value={category}>
                 {category}
