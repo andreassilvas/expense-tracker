@@ -1,4 +1,4 @@
-import { Button, Col, FloatingLabel, Form, Row } from "react-bootstrap";
+import { Button, Col, Form, Row } from "react-bootstrap";
 import expenseCategories from "../expense-categories";
 import "./ExpensesStyle.css";
 
@@ -6,7 +6,7 @@ const ExpenseForm = () => {
   return (
     <>
       <h5 className="mb-3 text-secondary">Expense Tracker</h5>
-      <Form>
+      <Form className=" border-bottom">
         <Row className="mb-3 g-1" size="sm">
           <Form.Group as={Col} controlId="descriptionInput">
             <Form.Control

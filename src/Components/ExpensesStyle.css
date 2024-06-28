@@ -1,10 +1,24 @@
-#amountInput, #descriptionInput,#categoriesInput{
+#descriptionInput,#amountInput,#categoriesInput, 
+#expense-filter,.expense-filter-text,#expense-filter-text{
     font-size: .6rem;
+}
+
+.expense-filter-text{
+    font-size: .5rem;
 }
 
 #amountInput::placeholder,
 #descriptionInput::placeholder,
-#categoriesInput{
-    color: #9a9a9a;
+#categoriesInput,#expense-filter{
+    color:rgb(11, 94, 215, 0.4);
+}
+
+#expense-filter,.expense-filter-text,#expense-filter-text{
+    color: #9a9a9a; 
+}
+
+
+#descriptionInput,#amountInput,#categoriesInput{
+    border-color: rgb(11, 94, 215, 0.4);
 }
 

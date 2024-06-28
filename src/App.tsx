@@ -33,20 +33,6 @@ function App() {
           ></ExpenseList>
         </div>
       </div>
-
-      {/* <div className="card">
-        <div className="card-body">
-          <ExpenseFilter
-            onSelectedCategory={(category) => setSelectedCategory(category)}
-          ></ExpenseFilter>
-          <ExpenseList
-            expenses={visibleExpenses}
-            onDelete={(id) =>
-              setExpenses(expenses.filter((ex) => ex.id !== id))
-            }
-          ></ExpenseList>
-        </div>
-      </div> */}
     </>
   );
 }
