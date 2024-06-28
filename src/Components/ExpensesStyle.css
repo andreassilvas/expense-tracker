@@ -11,10 +11,15 @@
 #descriptionInput::placeholder,
 #categoriesInput,#expense-filter,#expense-filter,
 .expense-filter-text,#expense-filter-text{
-    color: #9a9a9a; 
+    color: var(--bs-tertiary-color); 
 }
 
 #descriptionInput,#amountInput,#categoriesInput{
-    border-color: rgb(11, 94, 215, 0.4);
+    border-color: var(--bs-primary-border-subtle);
+}
+
+.table tfoot tr td {
+    color: var(--bs-gray-700);
+    font-weight: bold;
 }
 

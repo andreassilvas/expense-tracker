@@ -44,7 +44,7 @@ const ExpenseList = ({ expenses, onDelete }: ExpensesListProps) => {
           ))}
         </tbody>
         <tfoot>
-          <tr className="text-light bg-secondary">
+          <tr>
             <td>Total:</td>
             <td colSpan={3}>
               ${" "}
