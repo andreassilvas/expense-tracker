@@ -21,7 +21,14 @@ function App() {
     <>
       <div className="card mb-3 justify-content-start">
         <div className="card-body">
-          <ExpenseForm></ExpenseForm>
+          <ExpenseForm
+            onSubmit={(newExpense) => {
+              setExpenses([
+                ...expenses,
+                { ...newExpense, id: expenses.length + 1 },
+              ]);
+            }}
+          ></ExpenseForm>
           <ExpenseFilter
             onSelectedCategory={(category) => setSelectedCategory(category)}
           ></ExpenseFilter>

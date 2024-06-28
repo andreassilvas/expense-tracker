@@ -14,7 +14,7 @@ interface ExpensesListProps {
 
 const ExpenseList = ({ expenses, onDelete }: ExpensesListProps) => {
   if (expenses.length === 0)
-    return <div className="no-items">there are no items in this category</div>;
+    return <div className="no-items">There are no items in this category</div>;
 
   return (
     <div>

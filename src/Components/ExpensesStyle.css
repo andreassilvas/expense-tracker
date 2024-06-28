@@ -9,14 +9,10 @@
 
 #amountInput::placeholder,
 #descriptionInput::placeholder,
-#categoriesInput,#expense-filter{
-    color:rgb(11, 94, 215, 0.4);
-}
-
-#expense-filter,.expense-filter-text,#expense-filter-text{
+#categoriesInput,#expense-filter,#expense-filter,
+.expense-filter-text,#expense-filter-text{
     color: #9a9a9a; 
 }
-
 
 #descriptionInput,#amountInput,#categoriesInput{
     border-color: rgb(11, 94, 215, 0.4);

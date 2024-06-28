@@ -1,4 +1,4 @@
-import { Form, FormLabel } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import expenseCategories from "../expense-categories";
 import "./ExpensesStyle.css";
 
