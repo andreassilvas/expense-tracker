@@ -34,70 +34,67 @@ const ExpenseForm = ({ onSubmit }: ExpenseFormProps) => {
     formState: { errors },
   } = useForm<ExpenseFormData>({ resolver: zodResolver(schema) });
   return (
-    <>
-      <h5 className="mb-4 mt-4 text-secondary">Expense Tracker</h5>
-      <Form
-        className=" border-bottom"
-        onSubmit={handleSubmit((data) => {
-          onSubmit(data);
-          reset();
-        })}
-      >
-        <Row className="mb-3 g-1" size="sm">
-          <Form.Group as={Col} controlId="descriptionInput">
-            <Form.Control
-              {...register("description")}
-              type="text"
-              placeholder="Description"
-              size="sm"
-              aria-label="Description"
-            />
-            {errors.description && (
-              <p className="text-danger">{errors.description.message}</p>
-            )}
-          </Form.Group>
+    <Form
+      className=" border-bottom"
+      onSubmit={handleSubmit((data) => {
+        onSubmit(data);
+        reset();
+      })}
+    >
+      <Row className="mb-3 mt-4 g-1" size="sm">
+        <Form.Group as={Col} controlId="descriptionInput">
+          <Form.Control
+            {...register("description")}
+            type="text"
+            placeholder="Description"
+            size="sm"
+            aria-label="Description"
+          />
+          {errors.description && (
+            <p className="text-danger">{errors.description.message}</p>
+          )}
+        </Form.Group>
 
-          <Form.Group as={Col} controlId="amountInput">
-            <Form.Control
-              {...register("amount", { valueAsNumber: true })}
-              type="number"
-              placeholder="Amount"
-              size="sm"
-              aria-label="Amount"
-            />
-            {errors.amount && (
-              <p className="text-danger">{errors.amount.message}</p>
-            )}
-          </Form.Group>
+        <Form.Group as={Col} controlId="amountInput">
+          <Form.Control
+            {...register("amount", { valueAsNumber: true })}
+            type="number"
+            placeholder="Amount"
+            size="sm"
+            aria-label="Amount"
+          />
+          {errors.amount && (
+            <p className="text-danger">{errors.amount.message}</p>
+          )}
+        </Form.Group>
 
-          <Form.Group as={Col} controlId="categoriesInput">
-            <Form.Select
-              {...register("category")}
-              defaultValue="Category"
-              aria-label="Categories"
-              size="sm"
-            >
-              <option>select category</option>
-              {expenseCategories.map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
-            </Form.Select>
-            {errors.category && (
-              <p className="text-danger">{errors.category.message}</p>
-            )}
-          </Form.Group>
-        </Row>
-        <Row className="mb-4">
-          <Form.Group as={Col}>
-            <Button className="btn-sm" type="submit">
-              Add Expense
-            </Button>
-          </Form.Group>
-        </Row>
-      </Form>
-    </>
+        <Form.Group as={Col} controlId="categoriesInput">
+          <Form.Select
+            {...register("category")}
+            defaultValue="Category"
+            aria-label="Categories"
+            size="sm"
+          >
+            <option>select category</option>
+            {expenseCategories.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </Form.Select>
+          {errors.category && (
+            <p className="text-danger">{errors.category.message}</p>
+          )}
+        </Form.Group>
+      </Row>
+      <Row className="mb-4">
+        <Form.Group as={Col}>
+          <Button className="btn-sm" type="submit">
+            Add Expense
+          </Button>
+        </Form.Group>
+      </Row>
+    </Form>
   );
 };
 

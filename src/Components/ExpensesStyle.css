@@ -1,10 +1,6 @@
 #descriptionInput,#amountInput,#categoriesInput, 
 #expense-filter,.expense-filter-text,#expense-filter-text{
-    font-size: .7rem;
-}
-
-.expense-filter-text{
-    font-size: .6rem;
+    font-size: .8rem;
 }
 
 #amountInput::placeholder,

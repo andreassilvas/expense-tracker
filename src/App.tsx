@@ -4,6 +4,7 @@ import { useState } from "react";
 import ExpenseFilter from "./components/ExpenseFilter";
 import ExpenseForm from "./components/ExpenseForm";
 import "./App.css";
+import NavBar from "./components/NavBar";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -21,6 +22,7 @@ function App() {
     <>
       <div className="card mb-3 justify-content-start">
         <div className="card-body">
+          <NavBar></NavBar>
           <ExpenseForm
             onSubmit={(newExpense) => {
               setExpenses([
