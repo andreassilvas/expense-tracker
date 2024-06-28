@@ -18,7 +18,7 @@ const ExpenseList = ({ expenses, onDelete }: ExpensesListProps) => {
 
   return (
     <div>
-      <Table hover size="sm" responsive="sm">
+      <Table hover size="md" responsive="sm">
         <thead>
           <tr>
             <th>Description</th>
